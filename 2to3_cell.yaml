@@ -9,3 +9,7 @@ Parameters:
   description: Hotkey to convert the current cell from python2 to python3.
   input_type: text
   default: 'Ctrl-Q'
+- name: conv2to3.cell_magic
+  description: Use cell magic '%%run2in3' to run python2 code on python3 kernel without changing the code.
+  input_type: checkbox
+  default: false

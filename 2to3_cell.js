@@ -39,6 +39,18 @@ def refactor_cell(src): \n\
         return str(tree)[:-1] \n\
 "
 
+	var run2in3_lib =
+"\
+from IPython.core.magic import register_cell_magic \n\
+@register_cell_magic \n\
+def run2in3(line, cell): \n\
+    ''' \n\
+    Cell magic that runs python2 code as python3 code, using 2to3lib \n\
+    ''' \n\
+    return eval(refactor_cell(cell)) \n\
+del register_cell_magic \n\
+"
+
     function initialize() {
         // create config object to load parameters
         var base_url = utils.get_body_data("baseUrl");
@@ -113,6 +125,9 @@ def refactor_cell(src): \n\
             convert_2to3_button();
             Jupyter.keyboard_manager.edit_shortcuts.add_shortcuts(add_edit_shortcuts);
             exec_code(convert_2to3_lib)
+            if (cfg.cell_magic) {
+                exec_code(run2in3_lib)
+            }
         }
     }
 

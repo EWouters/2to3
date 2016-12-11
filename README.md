@@ -3,6 +3,9 @@
 This extension converts python2 code in a notebook's code cell to python3 code. 
 Under the hood, it uses Pythons build in [2to3](https://docs.python.org/3/library/2to3.html) function.
 
+You can use the toolbar button (the rocket ship) or the keyboard shortcut Ctrl-Q to convert the current cell to python3.
+Optionally you can enable the `%%run2in3` cell magic to convert and run a cell on-the-fly. The code in the cell will not be changed.
+
 The project was forked from [code_prettify](https://github.com/jfbercher/code_prettify) by [@jfbercher](https://github.com/jfbercher), retaining most of the code.
 The 2to3 conversion is based on [2to3_nb.py](https://gist.github.com/takluyver/c8839593c615bb2f6e80) by [@takluyver](https://github.com/takluyver) and [@fperez](https://github.com/fperez).
 
